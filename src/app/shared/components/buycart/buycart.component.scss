@@ -1,0 +1,48 @@
+.price {
+  font-size: 24px;
+  color: #6c757d;
+}
+.customcard {
+  width: 100%;
+  height: auto;
+  .option {
+    border: none;
+    font-weight: bold;
+  }
+  .Quantity {
+    font-size: 16px;
+  }
+  .info {
+    .minus {
+      height: 30px;
+      width: 30px;
+      border: 1px solid #6c757d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .num {
+      font-size: 20px;
+    }
+    .minus:hover {
+      // background-color: #6c757d;
+      color: rgb(89, 174, 223);
+    }
+  }
+
+  .addbtn:hover {
+    background-color: #6c757d;
+    color: #fff;
+  }
+
+  .buyBtn {
+    background-color: #6c757d;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+}

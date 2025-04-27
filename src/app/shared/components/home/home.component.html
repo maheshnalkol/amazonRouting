@@ -1,0 +1,18 @@
+<div class="row mt-5">
+  <ng-container *ngIf="productArr.length > 0; else noData">
+    <div
+      [routerLink]="product._id"
+      class="col-lg-2 mb-2 col-md-4 col-sm-6"
+      *ngFor="let product of productArr"
+    >
+      <app-card [prod]="product"></app-card>
+    </div>
+  </ng-container>
+  <ng-template #noData>
+    <p class="alert alert-warning">
+      Products not available right now! try again later...!!!
+    </p>
+  </ng-template>
+</div>
+
+

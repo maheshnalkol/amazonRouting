@@ -1,0 +1,42 @@
+<div class="customcard h-100">
+  <div class="imgContainer mb-2">
+    <img
+      (mouseenter)="onenter(prod)"
+      (mouseleave)="onleave()"
+      [ngStyle]="{
+        'imghover ': 'changeImg == prod'
+      }"
+      [src]="changeImg == prod ? prod.images[1] : prod.images[0]"
+      [alt]="prod.title"
+      [title]="prod.title"
+    />
+  </div>
+  <mat-divider class="mb-2"></mat-divider>
+  <div class="info">
+    <p>{{ prod.category }}</p>
+    <p class="title">{{ prod.title }}</p>
+    <p>{{ prod.total_price }}</p>
+  </div>
+  <div class="hovered">
+    <ul>
+      <li (click)="onaddCart($event)">
+        <span class="icon"><mat-icon>shopping_bag</mat-icon></span>
+      </li>
+      <li (click)="onaddlike($event, prod._id)">
+        <span
+          [ngClass]="{
+            isliked: isInwhishlist[prod._id]
+          }"
+          class="icon"
+          ><mat-icon>favorite</mat-icon></span
+        >
+      </li>
+      <li (click)="onaddVisibility($event)">
+        <span class="icon"><mat-icon>visibility</mat-icon></span>
+      </li>
+      <li (click)="onshuffle($event)">
+        <span class="icon"><mat-icon>shuffle</mat-icon></span>
+      </li>
+    </ul>
+  </div>
+</div>

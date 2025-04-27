@@ -1,0 +1,21 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  span {
+    color: gold;
+  }
+}
+.divider {
+  font-size: 20px;
+  opacity: 0.5;
+  color: #6c757d;
+  display: inline-block;
+}
+.anchor {
+  color: #6c757d;
+  cursor: pointer;
+  text-decoration: none;
+}
+.anchor:hover {
+  color: rgb(6, 26, 204);
+}

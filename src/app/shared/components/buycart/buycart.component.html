@@ -1,0 +1,35 @@
+<mat-card class="customcard">
+  <mat-card-content>
+    <p class="price">{{ getObj.total_price }}</p>
+    <p class="d-flex align-items-center">
+      <mat-icon class="mr-2">local_shipping</mat-icon> Free shipping
+    </p>
+    <p>
+      Shipping to :
+      <select class="option">
+        <option value="home">Home address</option>
+        <option value="office">Office address</option>
+      </select>
+    </p>
+    <p class="Quantity">Quantity</p>
+    <div class="info mb-2 d-flex align-items-center">
+      <div class="minus" (click)="onminus()" ><mat-icon>remove</mat-icon></div>
+      <div class="num mx-3">{{count}}</div>
+      <div class="minus" (click)="onadd()"><mat-icon>add</mat-icon></div>
+    </div>
+    <p>Color</p>
+    <select  class="form-control"><option value="black">Graphite black</option>
+    <option value="blue">Graphite blue</option></select>
+    <div class="addBuybtn mt-3 mb-3">
+        <button mat-raised-button class="btn-block addbtn">Add cart</button>
+        <button mat-raised-button class="btn-block buyBtn">Buy now</button>
+    </div>
+    <div class="details">
+        <p>Details</p>
+        <p *ngIf="getObj.return_policy;else nopolicy">{{getObj.return_policy}}</p>
+        <ng-template #nopolicy>
+            <p class="alert alert-warning">No return policy available..!!!</p>
+        </ng-template>
+    </div>
+  </mat-card-content>
+</mat-card>

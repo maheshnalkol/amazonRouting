@@ -1,0 +1,57 @@
+<div class="row my-5">
+  <div class="col-lg-4 col-md-4">
+    <div class="imgContain p-2">
+      <img [src]="selectedImg" alt="" />
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-12 col-md-12 col">
+        <div class="changeImg" *ngFor="let img of prodObj.images.slice(0, 6)">
+          <img (click)="onchangeImg(img)" [src]="img" [alt]="prodObj.title" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-5 col-md-5">
+    <div class="information mb-3">
+      <p>
+        <b>Category :</b> {{ prodObj.category }} / {{ prodObj.subcategory }}
+      </p>
+      <h2>{{ prodObj.title }}</h2>
+      <app-rating [getobj]="prodObj"></app-rating>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="info2 mt-4 mb-3">
+      <p class="price mb-4">{{ prodObj.total_price }}</p>
+      <div class="details" *ngIf="prodObj.product_details; else nodetail">
+        <ul *ngFor="let prod of prodObj.product_specifications" class="mb-2">
+          <li>
+            <b>{{ prod.specification_name }}</b> :
+            {{ prod.specification_value }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #nodetail>
+        <p class="alert alert-warning">Specification is not available...!!!</p>
+      </ng-template>
+      <div class="info3">
+        <!-- {{prodObj.product_specifications | json}} -->
+      </div>
+      <ng-template #nodetail>
+        <p class="alert alert-warning">Product details not available</p>
+      </ng-template>
+    </div>
+    <mat-divider></mat-divider>
+    <h2 class="mb-0">About this item</h2>
+    <ul class="desc" *ngIf="prodObj.product_description; else nodesc">
+      <li class="mb-2" *ngFor="let p of prodObj.product_description">
+        {{ p }}
+      </li>
+    </ul>
+    <ng-template #nodesc>
+      <p class="alert alert-warning">Product description is not available</p>
+    </ng-template>
+  </div>
+  <div class="col-lg-3 col-md-3">
+    <app-buycart [getObj]="prodObj"></app-buycart>
+  </div>
+</div>
