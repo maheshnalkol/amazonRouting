@@ -1,21 +1,65 @@
-.rating {
-  display: inline-flex;
-  align-items: center;
-  span {
-    color: gold;
-  }
-}
-.divider {
-  font-size: 20px;
-  opacity: 0.5;
-  color: #6c757d;
+// .rating {
+//   display: inline-flex;
+//   align-items: center;
+//   span {
+//     color: gold;
+//   }
+// }
+// .divider {
+//   font-size: 20px;
+//   opacity: 0.5;
+//   color: #6c757d;
+//   display: inline-block;
+// }
+// .anchor {
+//   color: #6c757d;
+//   cursor: pointer;
+//   text-decoration: none;
+// }
+// .anchor:hover {
+//   color: rgb(6, 26, 204);
+// }
+
+// .product-star {
+//   list-style: none;
+//   display: flex;
+//   padding: 0;
+//   .star-list {
+//     list-style: none;
+//     display: flex;
+//     padding: 0;
+//     .star {
+//       color: #fcb500;
+//     }
+//   }
+// }
+
+// .stars {
+//   display: inline-flex;
+//   position: relative;
+//   .stars2 {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     color: gold;
+//   }
+// }
+
+.stars {
+  position: relative;
   display: inline-block;
+  font-size: 30px; /* star size */
+  color: #ccc; /* empty stars color */
 }
-.anchor {
-  color: #6c757d;
-  cursor: pointer;
-  text-decoration: none;
+.empty-stars {
+  z-index: 1;
 }
-.anchor:hover {
-  color: rgb(6, 26, 204);
+.filled-stars {
+  color: gold; /* filled stars color */
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 2;
 }

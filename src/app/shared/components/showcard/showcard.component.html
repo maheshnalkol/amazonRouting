@@ -1,0 +1,62 @@
+<div class="showcard-container">
+  <div class="row">
+    <!-- Left: Product Image -->
+    <div class="col-lg-8 col-md-8">
+      <div class="imgContain p-2">
+        <img [src]="getprod.images[0]" [alt]="getprod.title" />
+      </div>
+    </div>
+
+    <!-- Right: Product Details -->
+    <div class="col-lg-8 col-md-8">
+      <div class="information mb-3">
+        <p>
+          <b>Category:</b> {{ getprod.category }} / {{ getprod.subcategory }}
+        </p>
+        <h2>{{ getprod.title }}</h2>
+        <app-rating [getobj]="getprod"></app-rating>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="info2 mt-4 mb-3">
+        <p class="price mb-4">{{ getprod.total_price }}</p>
+
+        <div
+          class="details"
+          *ngIf="getprod.product_specifications?.length; else nodetail"
+        >
+          <ul *ngFor="let spec of getprod.product_specifications" class="mb-2">
+            <li>
+              <b>{{ spec.specification_name }}</b
+              >: {{ spec.specification_value }}
+            </li>
+          </ul>
+        </div>
+
+        <ng-template #nodetail>
+          <p class="alert alert-warning">
+            Specification is not available...!!!
+          </p>
+        </ng-template>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <h2 class="mb-0">About this item</h2>
+      <ul class="desc" *ngIf="getprod.product_description?.length; else nodesc">
+        <li class="mb-2" *ngFor="let p of getprod.product_description">
+          {{ p }}
+        </li>
+      </ul>
+
+      <ng-template #nodesc>
+        <p class="alert alert-warning">Product description is not available</p>
+      </ng-template>
+
+      <div class="text-end mt-4">
+        <button class="btn btn-danger" (click)="onCloseclick()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

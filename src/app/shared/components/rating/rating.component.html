@@ -1,4 +1,4 @@
-<div class="rating">
+<!-- <div class="rating">
   <span><mat-icon>star</mat-icon></span
   ><span><mat-icon>star</mat-icon></span
   ><span><mat-icon>star</mat-icon></span
@@ -9,4 +9,30 @@
 <span class="divider my-auto ml-3">|</span>
 <span class="ml-3">Sold : 200</span>
 <span class="divider my-auto ml-3">|</span>
-<span class="ml-3"><a class="anchor">View Shop</a></span>
+<span class="ml-3"><a class="anchor">View Shop</a></span> -->
+
+<!-- <div class="stars" *ngFor="let star of [1, 2, 3, 4, 5]">
+  <div class="star1">
+    <mat-icon>star_bordered</mat-icon>
+  </div>
+  <div class="stars2" >
+    <mat-icon>star</mat-icon>
+  </div>
+</div> -->
+
+<div class="stars">
+  <div class="empty-stars">
+    <mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon
+    ><mat-icon>star</mat-icon><mat-icon>star</mat-icon>
+  </div>
+  <div
+    class="filled-stars"
+    [ngStyle]="{
+      width: rating * 20 + '%'
+    }"
+  >
+    <mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon
+    ><mat-icon>star</mat-icon><mat-icon>star</mat-icon>
+  </div>
+  <!-- 3.7 * 20 = 74% -->
+</div>

@@ -9,7 +9,9 @@ import { Iproduct } from '../../models/product';
 export class CardComponent implements OnInit {
   isInwhishlist: { [prodId: string]: boolean } = {};
   changeImg: any = null;
+  showQuickView: boolean = false;
   @Input() prod!: Iproduct;
+  selectedProd!: Iproduct;
   constructor() {}
 
   ngOnInit(): void {}
@@ -30,8 +32,14 @@ export class CardComponent implements OnInit {
   }
   onaddVisibility(eve: Event) {
     eve.stopPropagation();
+    this.selectedProd = this.prod;
+    this.showQuickView = !this.showQuickView;
   }
   onshuffle(eve: Event) {
     eve.stopPropagation();
+  }
+  onClosePopup(eve: Event) {
+    eve.stopPropagation();
+    this.showQuickView = false;
   }
 }

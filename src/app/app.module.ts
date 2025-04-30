@@ -12,9 +12,10 @@ import { ProductComponent } from './shared/components/product/product.component'
 import { CardComponent } from './shared/components/card/card.component';
 import { BuycartComponent } from './shared/components/buycart/buycart.component';
 import { RatingComponent } from './shared/components/rating/rating.component';
+import { ShowcardComponent } from './shared/components/showcard/showcard.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, AboutComponent, ProductComponent, CardComponent, BuycartComponent, RatingComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, AboutComponent, ProductComponent, CardComponent, BuycartComponent, RatingComponent, ShowcardComponent],
   imports: [BrowserModule, AppRoutingModule, MaterrialModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

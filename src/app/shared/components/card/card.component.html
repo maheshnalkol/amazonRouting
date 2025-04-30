@@ -40,3 +40,14 @@
     </ul>
   </div>
 </div>
+
+<div
+  *ngIf="showQuickView"
+  class="backdrop"
+  (click)="onClosePopup($event)"
+  style="cursor: pointer"
+>
+  <div class="popup-card">
+    <app-showcard [getprod]="selectedProd"></app-showcard>
+  </div>
+</div>
